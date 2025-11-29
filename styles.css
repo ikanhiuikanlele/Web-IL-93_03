@@ -1,0 +1,332 @@
+/* warna my saviors */
+:root {
+    --primary: #0A3D62;        
+    --primary-light: #0F5C85;
+    --primary-dark: #072C46;
+
+    --accent-green: #1B8057;   
+    --accent-bg: #E7F1F5;      
+    --surface: #FFFFFF;
+    --text-light: #FFFFFF;
+    --text-dark: #1A1A1A;
+}
+
+html { scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--accent-bg);
+    color: var(--text-dark);
+}
+
+/* navigator........ uhm */
+.navbar {
+    background-color: var(--primary);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--text-light);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar {
+    position: relative;
+    z-index: 9999;
+}
+
+.dropdown,
+.dropdown-content {
+    position: relative;
+    z-index: 99999;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 15px;
+    padding: 8px 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-green);
+}
+
+/* dropdown guys */
+.dropdown { position: relative; }
+
+.dropdown-content {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: var(--primary);
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content li a {
+    padding: 12px 14px;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background: var(--primary-light);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.list-sdg {
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* hero/header/serah guys pokoknya biar cantik */
+.hero {
+    background-image: url("header.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+     height: 91vh; /* adjust utk wave jg */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* biar wavenya ga dibawah gambar yaya*/
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;   /* higher than the wave */
+}
+
+
+.btn {
+    padding: 14px 32px;
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+
+.mini-btn {
+    background: var(--accent-green);
+    color: var(--text-light);
+    padding: 12px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.mini-btn:hover {
+    transform: translateY(-3px);
+    background: #146C47;
+    box-shadow: 0 7px 16px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: #146C47;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.hero h1,
+.hero p,
+.hero .btn-row,
+.hero .mini-btn {
+    position: relative;
+    z-index: 10;
+}
+
+.hero::before {
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.wave-wrapper {
+    z-index: 2;
+}
+
+
+/* containernya wave, aga belibet wavenya */
+.wave-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;       
+    overflow: hidden;
+    z-index: 10;     
+    height: 110px;  /* adjust disini */
+}
+
+/* INI WAVENYA BENERAN, BUKAN CONTAINER */
+.wave {
+    width: 200%;
+    height: 100%;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='100' viewBox='0 0 160 100'><path fill='%230A3D62' d='M0 30 Q40 0 80 30 T160 30 L160 100 L0 100 Z'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 160px 100px;
+    animation: waveLoop 6s linear infinite;
+        background-position-y: 15px;
+}
+
+/* animasi */
+@keyframes waveLoop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 60px;
+    font-weight: 700;
+    color: #064232;
+}
+
+/* Penjelasan */
+.feature-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 30px;
+}
+
+/* SDG SECTION STACKS VERTICALLY LIKE A PANCAKE */
+#sdg.feature-section {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 40px 20px;
+}
+
+/* boxes yes yes */
+.feature {
+    width: 90%;
+    max-width: 760px;
+    padding: 22px;
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid #CFE1E7;
+    text-align: center;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.feature h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* gambar di dalem kartu */
+.feature img {
+    width: 60%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 0 auto 18px;
+    display: block;
+}
+
+/* list di dalem kartu */
+.list-sdg {
+    max-width: 640px;
+    margin: 12px auto 0;
+    text-align: left;
+    padding-left: 24px;
+}
+
+.list-sdg li {
+    font-size: 15px;
+}
+
+/* cmn footer doang, g penting */
+footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
